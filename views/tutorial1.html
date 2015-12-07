@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Tutorial 1 - Hello World</div>
+	<div class="panel-body">
+		Hello and welcome to your first Programming tutorial. 
+		In this lesson we'd like for you to program your first "Hello-World" program. 
+		Now this one's going to be real easy. The only thing you'll need to do, is write the following code into the command line: <br/>
+		<pre class="prettyprint">println("Hello world!"); </pre>
+		Sounds easy, doesn't it? Give it a try!
+	</div>
+</div>
+<textarea id='code' class="form-control"></textarea><br />
+<button class="btn btn-success" onclick="play()">Compile</button><br/><br/>
+<div id="errorMessage" class="alert alert-danger" role="alert" hidden="true"></div>
+<div class="panel panel-default">
+	<div class="panel-heading">Console</div>
+	<div class="panel-body" id="console"></div>
+</div>
+<script>
+	condition = function(msg){
+		return (msg === "Hello world!");
+	}
+</script>

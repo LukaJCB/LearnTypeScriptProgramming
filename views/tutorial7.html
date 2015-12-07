@@ -1,0 +1,47 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Tutorial 7 - Loops (continued)</div>
+	<div class="panel-body">
+		In this lesson we're going to talk about what else you can with loops. <br/>
+		We're gonna jump right in and start with an example of how to determine if a number is odd or even.
+		<pre class="prettyprint">
+var num: number = 7;
+if (num % 2 == 0){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;println("I'm even!");<br/>
+} else {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;println("I'm odd!");<br/>
+}</pre>
+		So what are we doing here? What is that weird percentage sign and why are we comparing it to zero?<br/>
+		Okay this isn't all that easy if you're not used to it, so we'll try our best to explain.<br/>
+		The percentage sign(%) stands for the modulo-operator. 
+		Modulo operations find the remainder after a division with another number.<br/>
+		In our example we divide 7 by 2 and compare the remainder of that operation to 0. <br/>
+		7 divided by 2 is 3 with a remainder of 1. <br/><br/>
+		So the boolean value will be false and the code in the else-statement will be executed and "I'm odd!" will be printed to the screen.
+		This is true, because every number that can be fully divided by 2 is an even number, 
+		so if we were to change the value of our num variable to 8, this would print out "I'm even!". <br/><br/>
+		Now for this lesson's exercise, we're going to try something more difficult.
+		You're tasked with printing out all the numbers divisible by 7 in the range from 1 to 100.
+		Use a loop, if statements and the modulo operator to achieve your goal.
+	</div>
+</div>
+<textarea id='code' class="form-control">
+var counter: number = 1;
+
+while(  ){
+	
+		
+	
+}
+
+</textarea><br />
+<button class="btn btn-success" onclick="play()">Compile</button><br/><br/>
+<div id="errorMessage" class="alert alert-danger" role="alert" hidden="true"></div>
+<div class="panel panel-default">
+	<div class="panel-heading">Console</div>
+	<div class="panel-body" id="console"></div>
+</div>
+<script>
+	condition = function(msg){
+		return msg == "7<br>14<br>21<br>28<br>35<br>42<br>49<br>56<br>63<br>70<br>77<br>84<br>91<br>98";
+	}
+</script>

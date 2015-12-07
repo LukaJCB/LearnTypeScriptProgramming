@@ -1,0 +1,8 @@
+body {
+	font-family: helvetica, arial;
+}
+
+#code { 
+	height: 400px;
+	resize: none;
+}

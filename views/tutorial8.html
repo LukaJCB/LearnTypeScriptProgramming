@@ -1,0 +1,78 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Tutorial 8 - Functions</div>
+	<div class="panel-body">
+		In this lesson we're going to talk about functions! <br/>
+		Functions are ways to organize your code and make it reusable. 
+		We'll dive right in and have a look at a sample function:
+		<pre class="prettyprint">
+function getGrade(points: number): string {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;if (points &gt; 94){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "A";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (points > 79){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "B";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (points &gt; 64){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "C";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (points &gt; 49){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "D";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "F";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+}
+
+var grade: string = getGrade(74);
+println("Your grade is: ");
+println(grade);</pre>
+		Does this look crazy to you, yet somewhat familiar? It's the grading system we implemented a few tutorials ago.
+		If we run this code, it's gonna print out "Your grade is : C" to the console.<br/>
+		So we already know what happens inside of that function, but what are those "return"-thingys and what does all this even mean?
+		Well let's start at the beginning. <br/>
+		A function is defined by using the function keyword followed by the function name and then followed by parentheses with what we call "function parameters".<br/>
+		In our case we have one single parameter of type number, but we could have any number of parameters separated by a comma(,).
+		In case of no parameters we would just write nothing into our parentheses.<br/>
+		Here's an example of multiple parameters:
+		<pre class="prettyprint">
+function add(first: number, second: number): number {
+&nbsp;&nbsp;&nbsp;&nbsp;return first + second;
+}		
+		</pre>
+		These parameters allow us to pass data into our function. 
+		As you can see we can then use this parameter inside our function to calculate things.<br/>
+		After our parameter list you can see a colon (:) followed by another data type. This is the "return type".
+		The return type specifies what data type this function will return when called. In our example we have a return type of string.
+		Meaning that this function will always return a string, which is a grade in our case.
+		With the return keyword we can specify what we want to return. When we return something the rest of the code will be never be executed.<br/>
+		Here's an example:
+		<pre class="prettyprint">
+function sayHello(): string {
+&nbsp;&nbsp;&nbsp;&nbsp;return "Hello";
+&nbsp;&nbsp;&nbsp;&nbsp;println("This won't get executed :(");
+}		
+		</pre>
+		Today's exercise will be the following:
+		Create a function named "isEven" that will take a number as a parameter and return a boolean value if the number is even and false if it's odd.
+	</div>
+</div>
+<textarea id='code' class="form-control">
+
+function isEven(   ):     {
+	
+		
+	
+}
+println("7 is even:");
+println(isEven(7));
+</textarea><br />
+<button class="btn btn-success" onclick="play()">Compile</button><br/><br/>
+<div id="errorMessage" class="alert alert-danger" role="alert" hidden="true"></div>
+<div class="panel panel-default">
+	<div class="panel-heading">Console</div>
+	<div class="panel-body" id="console"></div>
+</div>
+<script>
+	condition = function(msg){
+		if (!isEven(3) && !isEven(11) && isEven(2) && isEven(16)){
+			return true;
+		} 
+		return false;
+	}
+</script>

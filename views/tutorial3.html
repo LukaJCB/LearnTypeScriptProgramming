@@ -1,0 +1,57 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Tutorial 3 - Data types (continued)</div>
+	<div class="panel-body">
+		In this lesson we'll focus on what we learned in our last tutorial and try to do some exercises to internalize these concepts.<br/>
+		In case you forgot which data types we learned about here's a little refresher from our last tutorial.
+		<ul class="list-group">
+			<li class="list-group-item">
+				<strong>string</strong> - A String is a sequence or a 'string' of character symbols. 
+				It can be any length and is denoted by using quotation marks.
+			</li>
+			<li class="list-group-item"><strong>number</strong> - A number is well, a number. A few examples are: -1, 2.4, 12, -234.55621</li>
+			<li class="list-group-item">
+				<strong>boolean</strong> - A boolean value can have exactly two values: true or false. 
+				It was named after English mathematician George Boole and is intended to represent the truth values of logic.
+			</li>
+		</ul>
+		Now imagine we have a movie database and we want to describe a single movie.
+		So this time we have a few variable declarations again, but this time they're missing the data type!
+		That's where you come in. Fill in the data types that best match.
+		
+	</div>
+</div>
+<textarea id='code' class="form-control">
+var title: ___ ;
+title = "Star Wars";
+
+var length: ___ ;
+length = 90;
+
+var isBlockBuster: ___ ;
+isBlockBuster = true;
+
+var genre: ___ ;
+genre = "Science-ficton";
+
+var isMadeByLucasFilm: ___ ;
+isMadeByLucasFilm = true;
+
+var ageRating: ___ ;
+ageRating = 13;
+
+var director: ___ ;
+director = "George Lucas";
+</textarea><br />
+<button class="btn btn-success" onclick="play()">Compile</button><br/><br/>
+<div id="errorMessage" class="alert alert-danger" role="alert" hidden="true"></div>
+<div class="panel panel-default">
+	<div class="panel-heading">Console</div>
+	<div class="panel-body" id="console"></div>
+</div>
+<script>
+	condition = function(msg){
+		return (typeof title == 'string' && typeof length == 'number' && typeof isBlockBuster == 'boolean'
+				&& typeof genre == 'string' && typeof ageRating == 'number' && typeof director == 'string'
+				&& typeof isMadeByLucasFilm == 'boolean'); 
+	}
+</script>

@@ -1,0 +1,117 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Tutorial 9 - Classes</div>
+	<div class="panel-body">
+		In this lesson we're going to talk about classes and objects! <br/>
+		classes and objects play a very important role in modern programming. They're part of a paradigm called Object-Oriented-Programming.
+		This is a very deep field of knowledge so we'll start with the basics.
+		A class is a data type, just like string and boolean and number. We call variables of the type of a class objects.
+		An object can be anything you can think of. Cars can be objects, people can be objects, basically anything you can think of with multiple attributes.
+		Let's start with an example.
+		<pre class="prettyprint">
+class Person {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;firstName: string;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;lastName: string;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;age: number;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;gender: string;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;hasJob: boolean;<br/>
+}
+
+var sarah: person = new Person;
+
+sarah.firstName = "Sarah";
+sarah.gender = "female";
+sarah.age = 18;
+sarah.hasJob = false;
+</pre>
+		Hope this isn't too much to digest.
+		Now let's go through this step by step.
+		First we see the class keyword followed by the class name, which is "Person" in this case.
+		Then we follow up with a curly brace which signals the class body.
+		Inside the class body we define the class's fields or members. 
+		These can be of any type you know, including other classes.
+		Once we defined our class we can use it to create objects that are instances of these classes.
+		Also, now with our class definition complete we can use it as a type for our function parameters and function return types.
+		In our example we create a variable named sarah of type person and then assign a new Person to it.
+		The "new"-keyword does exactly that, creating a new object.
+		With your new object you can access all of its fields by using the dot operator (.) and the name of the fields.
+		This way you can group small pieces of data for convenience.
+		Let's take a look at an example of a function that uses classes.
+		<pre class="prettyprint">
+function isUnderAge(person: Person): boolean {
+&nbsp;&nbsp;&nbsp;&nbsp;if (person.age &lt; 18){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;
+&nbsp;&nbsp;&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}		
+
+var sarah: Person = new Person;
+sarah.age = 18;
+println(isUnderAge(sarah));</pre>
+		You can see here quite well that passing in an object is easy and you can use the dot notation for accessing the object in the function.
+		Here's another example where the return type is a class.
+				<pre class="prettyprint">
+function getOldest(person1: Person, person2: Person): Person {
+&nbsp;&nbsp;&nbsp;&nbsp;if (person1.age &gt; person2.age){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return person1;
+&nbsp;&nbsp;&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return person2;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}		</pre>
+		Here we simply return the oldest of the two persons. <br/>
+		Now for today's exercise, imagine you wanted to vote in an election 300 years ago. 
+		During that time democracy wasn't quite as established as it is today, in fact you're voting in a constitutional monarchy.
+		You can only vote if you have a Job, are 21 years of age and are a male, not that we're promoting that kind of thing!
+		Your task is to write a function that takes a person as a parameter and return true if the person can vote. Have fun!
+	</div>
+</div>
+<textarea id='code' class="form-control">
+class Person {
+	firstName: string;
+	lastName: string;
+	age: number;
+	gender: string;
+	hasJob: boolean;
+}
+
+
+function canVote(   ):     {
+	
+		
+	
+}
+
+var thomas: Person = new Person;
+thomas.age = 23;
+thomas.gender = "male";
+thomas.hasJob = true;
+
+println(canVote(thomas));
+</textarea><br />
+<button class="btn btn-success" onclick="play()">Compile</button><br/><br/>
+<div id="errorMessage" class="alert alert-danger" role="alert" hidden="true"></div>
+<div class="panel panel-default">
+	<div class="panel-heading">Console</div>
+	<div class="panel-body" id="console"></div>
+</div>
+<script>
+	condition = function(msg){
+		var sarah = new Person;
+		sarah.gender = "female";
+		sarah.age = 23;
+		sarah.hasJob = true;
+		var hans = new Person;
+		hans.age = 18;
+		hans.gender = "male";
+		hans.hasJob = true;
+		var norbert = new Person;
+		norbert.hasJob = false;
+		norbert.age = 23;
+		norbert.gender= "male";
+		
+		if (!canVote(norbert) && !canVote(hans) && !canVote(sarah) && canVote(thomas)){
+			return true;
+		} 
+		return false;
+	}
+</script>

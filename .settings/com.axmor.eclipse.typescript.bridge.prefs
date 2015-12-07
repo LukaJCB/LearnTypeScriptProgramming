@@ -1,0 +1,12 @@
+declaration=true
+eclipse.preferences.version=1
+mapRoot=
+module=default
+noImplicitAny=false
+noResolve=false
+removeComments=false
+source=script
+sourceMap=false
+target=js
+targetRelativePathBasedOnSource=false
+targetVersion=ES5

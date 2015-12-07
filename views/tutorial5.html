@@ -1,0 +1,50 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Tutorial 5 - Control flow (continued)</div>
+	<div class="panel-body">
+		In this lesson we'll continue our focus on control flow.  <br/>
+		Now that we know how to use the if-statement let's try out something related.
+		We know how to use the if-statement when the value we passed is true, but what if it isn't?
+		That's where "else"-statement comes in. Let's take a look!
+		<pre class="prettyprint">
+if (points > 50){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;println("Yay, we passed!");<br/>
+} else {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;println("Oh no, we failed");<br/>
+}</pre>
+We can even stack these if-else patterns like this:
+		<pre class="prettyprint">if (points > 50){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;println("Yay, we passed!");<br/>
+} else if (points > 0){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;println("Oh no, we failed");<br/>
+} else {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;println("Oh damn zero points!");<br/>
+}</pre>
+		
+		In today's exercise you're going to be grading an exam. 50 points is a D, 65 is a C 80 is a B and 95 points will be an A.
+		See if you can create the logic to grade the exam.
+	</div>
+</div>
+<textarea id='code' class="form-control">
+var points: number = 74;
+
+var grade: string;
+
+if (points > 94){
+	grade = "A";
+} else if (points > 79){
+	grade = "B";
+}
+
+println(grade);
+</textarea><br />
+<button class="btn btn-success" onclick="play()">Compile</button><br/><br/>
+<div id="errorMessage" class="alert alert-danger" role="alert" hidden="true"></div>
+<div class="panel panel-default">
+	<div class="panel-heading">Console</div>
+	<div class="panel-body" id="console"></div>
+</div>
+<script>
+	condition = function(msg){
+		return msg == "C";
+	}
+</script>

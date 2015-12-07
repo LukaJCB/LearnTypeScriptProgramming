@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Tutorial 2 - Data types</div>
+	<div class="panel-body">
+		In this lesson we'll focus on variables and data types, but wait! Don't leave just yet, it's not actually all that difficult. <br/>
+		We've prepared 3 variable declarations in our code view below. Take a look and hit compile to see, what this program does and then come back. <br/>
+		<br/>
+		This might seem a bit confusing, but bear with us. First let's take a look at the basic syntax, the structure of our program.
+		<pre class="prettyprint">println(firstname);</pre>
+		You might remember the println function from last time, so it's time we explained what it actually does. 
+		"println" stands for "print line" and as you may have guessed it prints the given value to the console. 
+		Also note that every line of code we write ends with a semicolon (;) which denotes an end of expression, so the program knows when to stop evaluating the current expression.
+		Easy so far, right? Let's continue!
+		<pre class="prettyprint">var firstname: string = "Sarah";</pre>
+		Now what you're seeing is what we call a variable declaration. 
+		Every variable declaration begins with the keyword 'var' followed by the variable's name.<br/>
+		Then we see the colon symbol (:) followed by the variable's "data type". <br/>
+		What's a data type?  <br/>
+		Well let's take a look at the different types found in this program.
+		<ul class="list-group">
+			<li class="list-group-item">
+				<strong>string</strong> - A String is a sequence or a 'string' of character symbols. 
+				It can be any length and is denoted by using quotation marks.
+			</li>
+			<li class="list-group-item"><strong>number</strong> - A number is well, a number. A few examples are: -1, 2.4, 12, -234.55621</li>
+			<li class="list-group-item">
+				<strong>boolean</strong> - A boolean value can have exactly two values: true or false. 
+				It was named after English mathematician George Boole and is intended to represent the truth values of logic.
+			</li>
+		</ul>
+		So as we can see we have a person named Sarah who is 17 years old and underage.
+		Now for today's challenge: Yesterday was Sarah's birthday. She's now 18 and therefore not underage. 
+		Try to change the values to reflect her new age.
+	</div>
+</div>
+<textarea id='code' class="form-control">
+var firstname: string = "Sarah";
+println(firstname);
+
+var age: number = 17;
+println(age);
+
+var isUnderAge: boolean = true;
+println(isUnderAge);
+</textarea><br />
+<button class="btn btn-success" onclick="play()">Compile</button><br/><br/>
+<div id="errorMessage" class="alert alert-danger" role="alert" hidden="true"></div>
+<div class="panel panel-default">
+	<div class="panel-heading">Console</div>
+	<div class="panel-body" id="console"></div>
+</div>
+<script>
+	condition = function(msg){
+		return (age == 18 && isUnderAge == false);
+	}
+</script>

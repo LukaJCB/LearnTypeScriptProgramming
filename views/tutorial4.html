@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Tutorial 4 - Control flow</div>
+	<div class="panel-body">
+		In this lesson we'll focus on something called control flow. <br/>
+		Control flow is what happens when we're faced with a decision. Imagine you have test where you need at least 50 points to pass.
+		Now all the tests that have less than 50 points will fail and all the others will obviously pass.
+		This is where our boolean values come in. Let's take a look!
+		<pre class="prettyprint">var has50Points: boolean = true;<br/>
+if (has50Points){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;println("Yay, we passed!");<br/>
+}</pre>
+		So what we see here is a classic if-statement. We type "if" followed by a boolean value in parentheses(). 
+		Then we follow up with a curly brace, which only gets executed if the above value is true.
+		Let's look at another example.
+		<pre class="prettyprint">if (points &lt; 50){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;println("Oh no, we failed");<br/>
+}</pre>
+		This time, we again passed a boolean to the if statement. By using the "less than" comparison operator (&lt;) we created a new boolean on the fly!
+		The same thing goes for the "greater than" operator (&gt;), the "is unequal to" operator (!=) and the "is equal to" operator (==). 
+		Here, take a look!
+		<pre class="prettyprint">var hasA: boolean = points > 90;<br/>
+var hasPoints: boolean = points != 0;<br/>
+var has100Percent: boolean = points == 100;</pre>
+		Now today's exercise is going to be easy if you understood what we just did. Remember Sarah who just turned 18 two tutorials ago?
+		Well she wants to go out tonight and you have to check her ID to see if she's not underage.
+		
+		
+	</div>
+</div>
+<textarea id='code' class="form-control">
+var age: number = 18;
+var isOfAge: boolean;
+if (___){
+	isOfAge = true;
+}
+
+if (isOfAge){
+	println("you may enter!");
+}
+</textarea><br />
+<button class="btn btn-success" onclick="play()">Compile</button><br/><br/>
+<div id="errorMessage" class="alert alert-danger" role="alert" hidden="true"></div>
+<div class="panel panel-default">
+	<div class="panel-heading">Console</div>
+	<div class="panel-body" id="console"></div>
+</div>
+<script>
+	
+	condition = function(msg){
+		return msg == "you may enter!";
+	}
+</script>

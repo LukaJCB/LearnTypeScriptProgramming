@@ -1,0 +1,57 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Tutorial 6 - Loops</div>
+	<div class="panel-body">
+		In this lesson we're going to talk about loops!  <br/>
+		Loops, as you might have guessed, are a construct that allow you to repeat a certain instruction a given number of times.
+		Let's imagine a scenario where you'd like to print out a certain sentence 10 times.
+		You could do this manually, by writing the statement 10 times, but doing it in a loop is a lot more elegant and flexible.
+		Let's look at the code!
+		<pre class="prettyprint">
+var counter: number = 0;
+while (counter &lt; 10){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;println("I'm counting");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;counter++;<br/>
+}</pre>
+		Now I hope this doesn't look totally alien to you. At first glance it looks kind of similar to the if-statement right?
+		And it is! In between parentheses we also need to insert a boolean value. 
+		This time, however, the code in between the curly braces will keep executing until the boolean value is false.
+		After the loop is done executing we will go back to normal control flow and everything written under the loop will be executed.
+		So let's look at what else we did here. 
+		<pre class="prettyprint">counter++;</pre>
+		This line adds one to our counter variable. So after executing it once the value of counter will go from 0 to 1.
+		We can do the opposite thing, subtracting one from our variable by doing this:
+		<pre class="prettyprint">counter--;</pre>
+		So if our counter was 1 before, it will now be 0.<br/><br/>
+		These constructs to increment or decrement a number are SUPER IMPORTANT! 
+		Because if you forget to do these things, the boolean value inside the condition of the while loop will NEVER be false.
+		And what does that mean? IT WILL GO ON FOREVER!! Well thankfully thanks to modern computer scientists it's no longer the case.
+		HOWEVER it will still cause a crash, a freeze or other things that are bad. You can try it if you like, though I don't recommend it.<br/><br/>
+		
+		Now let's try something easy for today's exercise.
+		Imagine we're about to launch a rocket into space. We need a countdown from 10 to 1 for that!
+		After that countdown you should print out "Takeoff!". 
+		Your task is to implement this using a loop. 
+	</div>
+</div>
+<textarea id='code' class="form-control">
+var counter: number;
+
+while(___){
+	println(counter);
+	
+	
+}
+
+println("Takeoff!");
+</textarea><br />
+<button class="btn btn-success" onclick="play()">Compile</button><br/><br/>
+<div id="errorMessage" class="alert alert-danger" role="alert" hidden="true"></div>
+<div class="panel panel-default">
+	<div class="panel-heading">Console</div>
+	<div class="panel-body" id="console"></div>
+</div>
+<script>
+	condition = function(msg){
+		return msg == "10<br>9<br>8<br>7<br>6<br>5<br>4<br>3<br>2<br>1<br>Takeoff!";
+	}
+</script>
