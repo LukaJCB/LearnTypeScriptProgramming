@@ -15,6 +15,7 @@
 <script src="js/vendor/codemirror.js"></script>
 <script src="js/typescript.js"></script>
 <script src="js/typescript.compile.dev.js"></script>
+<script src="js/TutorialController.js"></script>
 <script src="js/main.js"></script>
 </head>
 <body data-ng-app="programming" style="background-color: #777;">
@@ -27,22 +28,23 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				    </button>
-			      	<a class="navbar-brand" href="#">Learn Programming!</a>
+			      	<a class="navbar-brand" href="#/home">Learn Programming!</a>
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav">
-					    <li class="active"><a href="#">Beginner Tutorials</a></li>
-					    <li><a href="#">Advanced Tutorials</a></li>
-					    <li><a href="#">About</a></li>
+					    <li class="active"><a href="#/beginners">Beginner Tutorials</a></li>
+					    <li><a href="#/advanced">Advanced Tutorials</a></li>
+					    <li><a href="#/about">About</a></li>
 				    </ul>
 				   </div>
 			</div>
 		</nav>
 	</header>
-	<div class="container">
+	<div class="container" data-ng-controller="TutorialController as control">
 		<div data-ng-view></div>
 	</div>
 </body>
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;lang=scala&amp;skin=sons-of-obsidian"></script>
+
 </html>

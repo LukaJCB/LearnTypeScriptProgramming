@@ -1,22 +1,7 @@
 /// <reference path="typescript.compile.dev.ts" />
+/// <reference path="TutorialController.ts" />
 /// <reference path="../ts-lib/angular.d.ts" />
 var condition;
-function play() {
-    $('#console').html("");
-    var code = 'declare function println(message: any): void;\n';
-    code += $('#code').val();
-    compile(code);
-    if (error.log) {
-        $('#errorMessage').html(error.log);
-        $('#errorMessage').show();
-    }
-    else {
-        $('#errorMessage').hide();
-    }
-    if (condition($('#console').html())) {
-        alert("You did it!");
-    }
-}
 function println(message) {
     if ($('#console').html().length == 0) {
         $('#console').html(message);
@@ -44,5 +29,13 @@ angular.module('programming', ['ngRoute']).config(function ($routeProvider) {
         templateUrl: 'views/tutorial8.html'
     }).when('/tutorial9', {
         templateUrl: 'views/tutorial9.html'
+    }).when('/beginners', {
+        templateUrl: 'views/beginners.html'
+    }).when('/advanced', {
+        templateUrl: 'views/advanced.html'
+    }).when('/about', {
+        templateUrl: 'views/about.html'
+    }).otherwise({
+        templateUrl: 'views/home.html'
     });
-});
+}).controller('TutorialController', ['$location', TutorialController]);
