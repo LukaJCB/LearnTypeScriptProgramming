@@ -2,6 +2,7 @@
 var TutorialController = (function () {
     function TutorialController($location) {
         this.$location = $location;
+        this.navbar = $location.path();
     }
     TutorialController.prototype.play = function () {
         $('#console').html("");
@@ -16,8 +17,11 @@ var TutorialController = (function () {
             $('#errorMessage').hide();
         }
         if (condition($('#console').html())) {
-            this.nextTutorial();
+            this.showDialog();
         }
+    };
+    TutorialController.prototype.showDialog = function () {
+        $('#tutorialFinish').modal('show');
     };
     TutorialController.prototype.nextTutorial = function () {
         var path = this.$location.path();

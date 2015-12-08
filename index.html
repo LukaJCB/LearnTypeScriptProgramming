@@ -5,9 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/codemirror.css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
 <script src="js/vendor/jquery-1.9.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
@@ -18,7 +17,7 @@
 <script src="js/TutorialController.js"></script>
 <script src="js/main.js"></script>
 </head>
-<body data-ng-app="programming" style="background-color: #777;">
+<body data-ng-app="programming" data-ng-controller="TutorialController as control">
 	<header>
 		<nav class="navbar navbar-default navbar-static-top">
   			<div class="container">
@@ -32,7 +31,7 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav">
-					    <li class="active"><a href="#/beginners">Beginner Tutorials</a></li>
+					    <li><a href="#/beginners">Beginner Tutorials</a></li>
 					    <li><a href="#/advanced">Advanced Tutorials</a></li>
 					    <li><a href="#/about">About</a></li>
 				    </ul>
@@ -40,10 +39,32 @@
 			</div>
 		</nav>
 	</header>
-	<div class="container" data-ng-controller="TutorialController as control">
+	<div class="container">
 		<div data-ng-view></div>
 	</div>
+	<div class="modal fade" tabindex="-1" role="dialog" id="tutorialFinish">
+		  <div class="modal-dialog">
+			    <div class="modal-content">
+				      <div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">Congratulations!</h4>
+				      </div>
+				      <div class="modal-body">
+				       	 	<p>You finished the tutorial.</p>
+				      </div>
+				      <div class="modal-footer">
+					        <button type="button" class="btn btn-primary" data-dismiss="modal">Stay here</button>
+					        <button type="button" class="btn btn-success" data-toggle="modal"
+					        	 data-target="#tutorialFinish" data-ng-click="control.nextTutorial()">
+					        	 	Next tutorial
+					        </button>
+				      </div>
+			    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 </body>
+
+
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;lang=scala&amp;skin=sons-of-obsidian"></script>
 

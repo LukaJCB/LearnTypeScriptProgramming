@@ -2,9 +2,11 @@
 class TutorialController {
 
     $location: any;
+    navbar: string;
 
     constructor($location) {
         this.$location = $location;
+        this.navbar = $location.path();
     }
 
     play() {
@@ -23,8 +25,12 @@ class TutorialController {
         }
 
         if (condition($('#console').html())) {
-            this.nextTutorial();
+            this.showDialog();
         }
+
+    }
+    showDialog(): void {
+        $('#tutorialFinish').modal('show');
     }
 
     nextTutorial() {
